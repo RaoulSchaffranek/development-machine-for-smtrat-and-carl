@@ -82,6 +82,7 @@ Vagrant.configure("2") do |config|
     apt-get install -y libboost-all-dev
     apt-get install -y doxygen
     apt-get install -y texlive
+    apt-get install -y cmake-curses-gui
     git clone https://github.com/smtrat/carl.git /vagrant/carl
     git clone https://github.com/smtrat/smtrat.git /vagrant/smtrat
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 1 --slave /usr/bin/g++ g++ /usr/bin/g++-6
