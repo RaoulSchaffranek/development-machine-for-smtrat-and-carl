@@ -1,7 +1,6 @@
 # Development machine for `smtrat` & `carl`
 
-Setting up a development-environment for [carl](https://github.com/smtrat/carl) and [smtrat](https://github.com/smtrat/smtrat) can be a tedious process. This Vagrant-machine therefore includes all required and (non graphical) optional dependencies to build and run the projects. However, there is only the `gcc`-compiler included, `clang` is not available. The machine is based `Ubuntu 14.04.* LTS`.
-n 
+Setting up a development-environment for [carl](https://github.com/smtrat/carl) and [smtrat](https://github.com/smtrat/smtrat) can be a tedious process. This Vagrant-machine therefore includes all required and (non graphical) optional dependencies to build and run the projects. However, there is only the `gcc`-compiler included, `clang` is not available. The machine is based `Ubuntu 16.04.* LTS`. 
 
 ## Requirements
 
