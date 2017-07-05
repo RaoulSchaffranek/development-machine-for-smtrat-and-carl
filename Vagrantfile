@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -68,13 +68,11 @@ Vagrant.configure("2") do |config|
     add-apt-repository ppa:ubuntu-toolchain-r/test
     apt-get update
     apt-get upgrade -y
-    apt-get install -y git
-    wget -q https://cmake.org/files/v3.8/cmake-3.8.0-Linux-x86_64.sh
-    chmod +x cmake-3.8.0-Linux-x86_64.sh
-    echo 'y\ny' | ./cmake-3.8.0-Linux-x86_64.sh --prefix=/opt/cmake
-    rm cmake-3.8.0-Linux-x86_64.sh
-    ln -s /opt/cmake/cmake-3.8.0-Linux-x86_64/bin/cmake /usr/local/bin/cmake
-    apt-get install -y gcc-6 g++-6
+    apt-get install -y build-essential
+    apt-get install -y software-properties-common
+    apt-get install -y gcc-snapshot
+    apt-get install -y gcc-6
+    apt-get install -y g++-6
     apt-get install -y libcln6
     apt-get install -y libcln-dev
     apt-get install -y libgmp-dev
@@ -83,13 +81,10 @@ Vagrant.configure("2") do |config|
     apt-get install -y doxygen
     apt-get install -y texlive
     apt-get install -y cmake-curses-gui
-    apt-get install -y libboost1.55-all-dev
-    apt-get install -y libboost1.55-dev
-    apt-get install -y libboost-program-options1.55-dev
-    apt-get install -y libboost-system1.55-dev
-    apt-get install -y libboost-regex1.55-dev
-    git clone https://github.com/smtrat/carl.git /vagrant/carl
-    git clone https://github.com/smtrat/smtrat.git /vagrant/smtrat
-    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 1 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+    apt-get install -y libboost-all-dev
+    apt-get install -y valgrind
+    apt-get install -y kcachegrind
+    apt-get install -y graphviz
+    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
   SHELL
 end
